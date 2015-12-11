@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>canvasで図形を描く</title>
+<style>
+.canvasWrapper {
+    width: 500px;
+    height: 500px;
+}
+#sample {
+    background-color: yellow;
+}
+</style>
+<script type="text/javascript">
+<!--
+window.onload = function () {
+    //描画コンテキストの取得
+    var canvas = document.getElementById('sample');
+    if (canvas.getContext) {
+        var context = canvas.getContext('2d');
+        //ここに具体的な描画内容を指定する
+        //左から20上から40の位置に、幅50高さ100の四角形を描く
+        context.fillRect(20,40,50,100);
+        //色を指定する
+        context.strokeStyle = 'rgb(00,00,255)'; //枠線の色は青
+        context.fillStyle = 'rgb(255,00,00)'; //塗りつぶしの色は赤
+        //左から200上から80の位置に、幅100高さ50の四角の枠線を描く
+        var test = context.strokeRect(300,300,100,50);
+        //左から150上から75の位置に、半径60の半円を反時計回り（左回り）で描く
+        context.arc(150,75,60,Math.PI*1,Math.PI*2,true);
+        context.fill();
+    }
+    document.onkeydown = function (e){
+        switch (e.keyIdentifier) {
+        case 'Right' :
+            break;
+        case 'Left' :
+            break;
+        case 'Up' :
+            break;
+        case 'Down' :
+            break;
+        }
+    };
+}
+//-->
+</script>
+</head>
+<body>
+<h2>Canvasで図形を描く</h2>
+<div class='canvasWrapper'>
+<canvas id="sample" width='500' height='500'>
+図形を表示するには、canvasタグをサポートしたブラウザが必要です。
+</canvas>
+</div>
+</body>
+</html>
